@@ -14,6 +14,12 @@ $("#str_to_hex").change(function() {
 }
 )
 
+$("#close").click( function(){
+    console.log("closed");
+    $(".alert-message").hide();
+}
+)
+
 $(function() {
     $("#text").prop("required", true)
     $("#result").prop("required", false)

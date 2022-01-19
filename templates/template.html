@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link rel="stylesheet" href="styles.css">
+    <title>Strings to Bytes Converter</title>
+   <link rel="stylesheet" href='{{url_for("static", filename="css/styles.css")}}'>
 </head>
 
 <body>
@@ -15,37 +15,53 @@
 <div class="container">
     <header class="bg-primary">
         <div>
-            <img class="img" src="../asset/web.png" alt="web3bidge-logo"/>
+            <img class="img" src='{{url_for("static", filename="asset/web.png")}}' alt="web3bidge-logo"/>
         </div>
-        <h2 class="byte">Byte Converter</h2>
+        <h2 class="byte">Bytes Converter</h2>
     </header>
     <main>
-        <form>
-            <div class="input__text">
-                <label for="byte-text">Input Text</label>
-                <textarea class="text" name="byte-text" id="byte-text"></textarea>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-message block-message error">
+                    <a class="close" href="#" id="close">x</a>
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="post">
+            <div class="form-group input__text">
+                {{ form.text.label }}
+                {{ form.text(class="text")}}
             </div>
-            <div class="encode">
-                <label class="mv" for="byte-text">Encoding</label>
-                <input class="checkbox" type="checkbox"/>
+            <div class="form-group d-flex">
+                {{ form.encoding.label }}
+                {{ form.encoding(class="tabbed") }}
             </div>
-            <div class="input__byte">
-                <select name="byte-data" id="byte-option">
-                    <option>byte32</option>
-                    <option>byte64</option>
-                </select>
+            <div class="form-group d-flex">
+                {{ form.add_prefix }}
+                {{ form.add_prefix.label(class="tabbed") }}
             </div>
-            <div class="input__output">
-                <label for="byte-text">Output Text</label>
-                <textarea class="text" name="byte-text" id="byte-text" cols="30" rows="10"></textarea>
+            <div class="form-group">
+                {{ form.result.label }}
+                {{ form.result(class="text") }}
+            </div>
+            <div class="form-group d-flex">
+                {{ form.str_to_hex }}
+                {{ form.str_to_hex.label(class="tabbed") }}
             </div>
             <div class="btn">
-                <button class="btn_cta" type="button">Convert</button>
+                <button class="btn_cta" type="submit">Convert</button>
             </div>
         </form>
     </main>
 </div>    
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src='{{url_for("static", filename="js/main.js")}}'></script>
 </body>
 
 </html>

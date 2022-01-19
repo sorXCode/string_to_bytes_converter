@@ -48,17 +48,21 @@ label {
   height: 100px;
   resize: none;
 }
-.encode {
+.d-flex {
   display: flex;
   align-items: center;
-  /* margin-bottom: 2rem; */
-}
-.input__text {
-  margin-bottom: 2rem;
 }
 
-.input__output {
-  margin-bottom: 7rem;
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.tabbed {
+  margin-left: 1rem;
+}
+
+.btn {
+  margin-top: 2rem;
 }
 button {
   text-align: center;
@@ -73,15 +77,11 @@ button {
   width: 100%;
   cursor: pointer;
 }
-/* .mv > label{
-    margin-right: 2rem;
-} */
-.input__byte{
-    margin-bottom: 1rem;
+input[type=checkbox]{
+  width: 25px;
+  height: 25px;
+
 }
-
-
-
 
 @media screen and (max-width:540px) {
     header {

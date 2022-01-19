@@ -14,7 +14,7 @@ class InputForm(Form):
         [validators.DataRequired()],
         choices=[(f"bytes-{x}", f"BYTES-{x}") for x in range(32, 0, -1)],
     )
-    add_prefix = BooleanField(f"Add '{prefix_var}' Prefix", default=False)
+    add_prefix = BooleanField(f"Add '{prefix_var}' Prefix", default=True, render_kw={"checked": True})
     result = TextAreaField("Bytes")
     str_to_hex = BooleanField("Convert to Bytes", default=True, render_kw={"checked": True})
 
@@ -49,7 +49,8 @@ def index():
         Convert submitted bytes to string.
         """
         return convert_hex_to_str(submitted_str)
-
+    
+    template_file = "template.html"
     form = InputForm(request.form)
     if request.method == "POST":
         if form.validate():
@@ -73,10 +74,10 @@ def index():
                     submitted_text = ""
 
             return render_template(
-                "index.html",
+                template_file,
                 form=InputForm(
                     text=submitted_text, encoding=submitted_encoding, result=result
                 ),
             )
 
-    return render_template("index.html", form=form)
+    return render_template(template_file, form=form)
