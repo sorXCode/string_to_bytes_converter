@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;1,300;1,400;1,600&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: 'Mulish', sans-serif;
+}
+
+.img {
+  width: 100%;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+header {
+  background: rgba(32, 25, 75, 0.7);
+  height: 100vh;
+  width: 25rem;
+}
+main {
+  padding: 4rem;
+}
+.checkbox {
+    margin-left: 1rem;
+}
+
+.byte {
+  color: #ccc;
+  text-align: center;
+  font-size:2.5rem;
+  font-weight:700;
+}
+
+label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.text {
+  outline: none;
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+.encode {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 2rem; */
+}
+.input__text {
+  margin-bottom: 2rem;
+}
+
+.input__output {
+  margin-bottom: 7rem;
+}
+button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background: #20194b;
+  border: 1px solid #d8e4ef;
+  border-radius: 4px;
+  padding:1rem;
+  color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+/* .mv > label{
+    margin-right: 2rem;
+} */
+.input__byte{
+    margin-bottom: 1rem;
+}
+
+
+
+
+@media screen and (max-width:540px) {
+    header {
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) {
+    header {
+        width: 100%;
+        height:30vh;
+        padding:2rem;
+    }
+    .container{
+        display:block;
+    }
+    .byte{
+        font-size: 1rem;
+    }
+
+}

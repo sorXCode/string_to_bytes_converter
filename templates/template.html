@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="">
+<div class="container">
+    <header class="bg-primary">
+        <div>
+            <img class="img" src="../asset/web.png" alt="web3bidge-logo"/>
+        </div>
+        <h2 class="byte">Byte Converter</h2>
+    </header>
+    <main>
+        <form>
+            <div class="input__text">
+                <label for="byte-text">Input Text</label>
+                <textarea class="text" name="byte-text" id="byte-text"></textarea>
+            </div>
+            <div class="encode">
+                <label class="mv" for="byte-text">Encoding</label>
+                <input class="checkbox" type="checkbox"/>
+            </div>
+            <div class="input__byte">
+                <select name="byte-data" id="byte-option">
+                    <option>byte32</option>
+                    <option>byte64</option>
+                </select>
+            </div>
+            <div class="input__output">
+                <label for="byte-text">Output Text</label>
+                <textarea class="text" name="byte-text" id="byte-text" cols="30" rows="10"></textarea>
+            </div>
+            <div class="btn">
+                <button class="btn_cta" type="button">Convert</button>
+            </div>
+        </form>
+    </main>
+</div>    
+</div>
+</body>
+
+</html>
