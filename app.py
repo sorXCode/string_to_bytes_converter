@@ -8,6 +8,9 @@ app.secret_key = "some_secret"
 
 
 class InputForm(Form):
+    """
+    Form for inputting data
+    """
     text = TextAreaField("Text")
     encoding = SelectField(
         "Encoding",
@@ -54,6 +57,7 @@ def index():
     form = InputForm(request.form)
     if request.method == "POST":
         if form.validate():
+            # extract fields from validated form
             submitted_text = request.form["text"]
             submitted_encoding = request.form["encoding"]
             add_prefix = request.form.get("add_prefix", False)
